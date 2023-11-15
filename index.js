@@ -45,16 +45,16 @@
                 let result;
 
                 switch (operation) {
-                    case "Addition":
+                    case "Toplama":
                         result = num1 + num2;
                         break;
-                    case "Subtraction":
+                    case "Çıxma":
                         result = num1 - num2;
                         break;
-                    case "Multiplication":
+                    case "Vurma":
                         result = num1 * num2;
                         break;
-                    case "Division":
+                    case "Bölme":
                         if (num2 !== 0) {
                             result = num1 / num2;
                         } else {
