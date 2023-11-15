@@ -4,7 +4,7 @@ let num1Input = document.querySelector("#num1");
 let num2Input = document.querySelector("#num2");
 
 // H1 tagını tapmaq üçün ID-dən istifadə etdim
-let resultHeading = document.getElementById("result");
+let resultH1 = document.querySelector("#result");
 
 // buttonlari tapmaq üçün ID-dən istifadə etdim
 let toplamaBtn = document.querySelector("#topla");
@@ -42,7 +42,7 @@ function calculate(operation) {
             case "Toplama":
                 result = num1 + num2;
                 break;
-            case "Cixma":
+            case "Cixma":5
                 result = num1 - num2;
                 break;
             case "Vurma":
@@ -60,9 +60,9 @@ function calculate(operation) {
         }
 
         // Nəticəni göstər
-        resultHeading.textContent = `Result: ${result}`;
+        resultH1.textContent = `Result: ${result}`;
     } else {
         // Əgər ədədlər düzgün daxil edilməyibsə xəbərdarlıq ver
-        resultHeading.textContent = "Dogru Reqem ve ya metn daxil edin";
+        resultH1.textContent = "Dogru Reqem ve ya metn daxil edin";
     }
 }
