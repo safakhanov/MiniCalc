@@ -15,16 +15,16 @@
 
         // Click əlavə etdim
         toplamaBtn.addEventListener("click", function () {
-            calculate("Topla");
+            calculate("topla");
         });
         cixmaBtn.addEventListener("click", function () {
-            calculate("Cıx");
+            calculate("cix");
         });
         vurmaBtn.addEventListener("click", function () {
-            calculate("Vur");
+            calculate("vur");
         });
         bolmeBtn.addEventListener("click", function () {
-            calculate("Böl");
+            calculate("bol");
         });
 
         clearBtn.addEventListener("click", function () {
@@ -45,16 +45,16 @@
                 let result;
 
                 switch (operation) {
-                    case "Toplama":
+                    case "topla":
                         result = num1 + num2;
                         break;
-                    case "Çıxma":
+                    case "cix":
                         result = num1 - num2;
                         break;
-                    case "Vurma":
+                    case "vur":
                         result = num1 * num2;
                         break;
-                    case "Bölme":
+                    case "bol":
                         if (num2 !== 0) {
                             result = num1 / num2;
                         } else {
