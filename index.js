@@ -1,68 +1,75 @@
 
-// Inputları tapmaq üçün ID-dən istifadə etdim
-let num1Input = document.querySelector("#num1");
-let num2Input = document.querySelector("#num2");
+        // Inputları tapmaq üçün ID-dən istifadə etdim
+        let num1Input = document.querySelector("#num1");
+        let num2Input = document.querySelector("#num2");
 
-// H1 tagını tapmaq üçün ID-dən istifadə etdim
-let resultH1 = document.querySelector("#result");
+        // H1 tagını tapmaq üçün ID-dən istifadə etdim
+        let resultH1 = document.querySelector("#result");
 
-// buttonlari tapmaq üçün ID-dən istifadə etdim
-let toplamaBtn = document.querySelector("#topla");
-let cixmaBtn = document.querySelector("#cix");
-let vurmaBtn = document.querySelector("#vur");
-let bolmeBtn = document.querySelector("#bol");
+        // buttonlari tapmaq üçün ID-dən istifadə etdim
+        let toplamaBtn = document.querySelector("#topla");
+        let cixmaBtn = document.querySelector("#cix");
+        let vurmaBtn = document.querySelector("#vur");
+        let bolmeBtn = document.querySelector("#bol");
+        let clearBtn = document.querySelector("#clear");
 
-// Click  əlavə etdim
-toplamaBtn.addEventListener("click", function() {
-    calculate("Toplama");
-});
-cixmaBtn.addEventListener("click", function() {
-    
-    calculate("Cixma");
-});
-vurmaBtn.addEventListener("click", function() {
-    calculate("Vurma");
-});
-bolmeBtn.addEventListener("click", function() {
-    calculate("Bolme");
-});
+        // Click əlavə etdim
+        toplamaBtn.addEventListener("click", function () {
+            calculate("Topla");
+        });
+        cixmaBtn.addEventListener("click", function () {
+            calculate("Cıx");
+        });
+        vurmaBtn.addEventListener("click", function () {
+            calculate("Vur");
+        });
+        bolmeBtn.addEventListener("click", function () {
+            calculate("Böl");
+        });
 
-// Əməliyyatı hesablamaq üçün funksiya
-function calculate(operation) {
-    // İstifadəçinin daxil etdiyi ədədləri əldə etdim
-    let num1 = parseFloat(num1Input.value);
-    let num2 = parseFloat(num2Input.value);
+        clearBtn.addEventListener("click", function () {
+            num1Input.value = "";
+            num2Input.value = "";
+            resultH1.textContent = "İstediyiniz Emeliyyatı yazın";
+        });
 
-    // Əgər ədədlər düzgün daxil edilibsə
-    if (!isNaN(num1) && !isNaN(num2)) {
-        // Hesablama əməliyyatını apar
-        let result;
+        // Əməliyyatı hesablamaq üçün funksiya
+        function calculate(operation) {
+            // İstifadəçinin daxil etdiyi ədədləri əldə etdim
+            let num1 = parseFloat(num1Input.value);
+            let num2 = parseFloat(num2Input.value);
 
-        switch (operation) {
-            case "Toplama":
-                result = num1 + num2;
-                break;
-            case "Cixma":5
-                result = num1 - num2;
-                break;
-            case "Vurma":
-                result = num1 * num2;
-                break;
-            case "Bolme":
-                if (num2 !== 0) {
-                    result = num1 / num2;
-                } else {
-                    result = "Error: Sifira bolmek olmur get riyaziyyat oyren";
+            // Əgər ədədlər düzgün daxil edilibsə
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Hesablama əməliyyatını apar
+                let result;
+
+                switch (operation) {
+                    case "Addition":
+                        result = num1 + num2;
+                        break;
+                    case "Subtraction":
+                        result = num1 - num2;
+                        break;
+                    case "Multiplication":
+                        result = num1 * num2;
+                        break;
+                    case "Division":
+                        if (num2 !== 0) {
+                            result = num1 / num2;
+                        } else {
+                            result = "Error: Sıfıra bölmək olmur get Riyaziyyat öyrən";
+                        }
+                        break;
+                    default:
+                        result = "Yanlış əməliyyat";
                 }
-                break;
-            default:
-                result = "Invalid operation";
-        }
 
-        // Nəticəni göstər
-        resultH1.textContent = `Result: ${result}`;
-    } else {
-        // Əgər ədədlər düzgün daxil edilməyibsə xəbərdarlıq ver
-        resultH1.textContent = "Dogru Reqem ve ya metn daxil edin";
-    }
-}
+                // Nəticəni göstər
+                resultH1.textContent = `Result: ${result}`;
+            } else {
+                // Əgər ədədlər düzgün daxil edilməyibsə xəbərdarlıq verir
+                resultH1.textContent = "Zəhmət olmasa doğru rəqəm daxil edin";
+            }
+        }
+    
